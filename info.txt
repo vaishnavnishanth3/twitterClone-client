@@ -1,0 +1,8 @@
+npm i express mongoose jsonwebtoken bcryptjs dotenv cors cookie-parser cloudinary
+
+to generate Token:
+ (in git bash):
+    openssl rand -base64 32
+
+
+use app.eraser.io to draw a flow map
