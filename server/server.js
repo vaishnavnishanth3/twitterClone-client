@@ -5,6 +5,7 @@ import { v2 as cloudinary} from "cloudinary"
 import dbConnection from "./db/connectMongoDB.js"
 import authRoutes from "./routes/auth.routes.js"
 import userRoutes from "./routes/user.routes.js"
+import postRoutes from "./routes/post.routes.js"
 import cookieParser from "cookie-parser"
 
 dotenv.config()
@@ -25,6 +26,7 @@ app.use(cookieParser())
 
 app.use("/api/auth",authRoutes)
 app.use("/api/users",userRoutes)
+app.use("/api/posts",postRoutes)
 
 app.listen(port, () => {
     console.log(`\nServer running on http://localhost:${port}`)
