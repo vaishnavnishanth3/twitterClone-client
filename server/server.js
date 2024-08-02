@@ -6,6 +6,7 @@ import dbConnection from "./db/connectMongoDB.js"
 import authRoutes from "./routes/auth.route.js"
 import userRoutes from "./routes/user.route.js"
 import postRoutes from "./routes/post.route.js"
+import notificationRoutes from "./routes/notification.route.js"
 import cookieParser from "cookie-parser"
 
 dotenv.config()
@@ -27,6 +28,8 @@ app.use(cookieParser())
 app.use("/api/auth",authRoutes)
 app.use("/api/users",userRoutes)
 app.use("/api/posts",postRoutes)
+app.use("/api/notifications",notificationRoutes)
+
 
 app.listen(port, () => {
     console.log(`\nServer running on http://localhost:${port}`)
