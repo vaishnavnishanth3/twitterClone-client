@@ -1,7 +1,7 @@
 import express from "express"
 import dotenv from "dotenv"
 import { v2 as cloudinary} from "cloudinary"
-
+import cors from "cors"
 import dbConnection from "./db/connectMongoDB.js"
 import authRoutes from "./routes/auth.route.js"
 import userRoutes from "./routes/user.route.js"
@@ -22,7 +22,7 @@ const port = process.env.PORT;
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) //to parse form data
-
+app.use(cors())
 app.use(cookieParser())
 
 app.use("/api/auth",authRoutes)

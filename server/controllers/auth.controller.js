@@ -11,16 +11,16 @@ export async function signup( req , res) {
 
         const exisitingUser = await User.findOne({ username });
         if (exisitingUser) {
-            return res.status(400).json({ message: "username already exists"})
+            return res.status(400).json({ error: "Username already exists"})
         }
 
         const exisitingEmail = await User.findOne({ email })
         if (exisitingEmail) {
-            return res.status(400).json({ message: "Email already exists"})
+            return res.status(400).json({ error: "Email already exists"})
         }
 
         if (password.length < 6) {
-            return res.status(400).json({ message: "Password must be at least 6 characters long"})
+            return res.status(400).json({ error: "Password must be at least 6 characters long"})
         }
 
         const salt = await bcrypt.genSalt(10);

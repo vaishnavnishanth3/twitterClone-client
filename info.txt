@@ -6,3 +6,5 @@ to generate Token:
 
 
 use app.eraser.io to draw a flow map
+
+tenstack(react query)
